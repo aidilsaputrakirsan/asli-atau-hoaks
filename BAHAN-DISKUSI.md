@@ -10,15 +10,15 @@ Draf awal. Semua di bawah ini usulan dan bisa diubah setelah bertemu panitia.
 | Bagian | Slide | Menit |
 |---|---|---|
 | Pembuka + kuis "asli atau AI?" | 1–4 | 8 |
-| Ancaman nyata (kasus deepfake Presiden, Bareskrim 2025) + 4 tingkat rekayasa | 5–6 | 6 |
-| Pertanyaan inti + **perbandingan 4 cara memeriksa** | 7–8 | 5 |
-| Mata · Asal-usul file · Alat deteksi · Konteks (OSINT) | 9–12 | 14 |
-| Alur 5 langkah + 5 tingkat keyakinan | 13–14 | 6 |
-| Liar's dividend + hukum & pembuktian | 15–16 | 6 |
-| Praktik kelompok (opsional) | 17 | 15 |
-| Rekomendasi + penutup | 18–19 | 3 |
+| Ancaman nyata (kasus deepfake Presiden, Bareskrim 2025) + 4 tingkat rekayasa + video bodycam palsu | 5–7 | 8 |
+| Pertanyaan inti + **perbandingan 4 cara memeriksa** | 8–9 | 5 |
+| Mata · Asal-usul file · Alat deteksi · Konteks (OSINT) | 10–13 | 13 |
+| Alur 5 langkah + 5 tingkat keyakinan | 14–15 | 6 |
+| Liar's dividend + hukum & pembuktian | 16–17 | 5 |
+| Praktik kelompok (opsional) | 18 | 15 |
+| Rekomendasi + penutup | 19–20 | 3 |
 
-Kalau waktunya hanya 30 menit: lewati slide 9 (mata), 17 (praktik), dan ringkas slide 16.
+Kalau waktunya hanya 30 menit: lewati slide 10 (mata), 18 (praktik), dan ringkas slide 17.
 
 ## Yang perlu ditanyakan ke panitia
 1. **Nama acara, tanggal, tempat, durasi**, dan apakah ada sesi tanya jawab/praktik.
@@ -33,6 +33,8 @@ Kalau waktunya hanya 30 menit: lewati slide 9 (mata), 17 (praktik), dan ringkas 
 8. Ada **logo/identitas acara** yang wajib dipakai di sampul?
 
 ## Usulan tambahan dari saya
+- **Video bodycam polisi palsu buatan Sora** (domain publik): contoh paling dekat dengan dunia kerja peserta.
+- Rujukan resmi untuk penegak hukum: laporan **Europol** (2022/2024) dan **INTERPOL "Beyond Illusions"** (2024). Lihat `RUJUKAN.md`.
 - **Kuis pembuka** "asli atau AI?" (4 gambar). Hasilnya biasanya mendekati tebakan acak, dan itu langsung membuktikan poin utama.
 - **Tingkat keyakinan** (5 tingkat) untuk laporan, bukan hanya "asli/hoaks".
 - **Lembar verifikasi 1 halaman** sebagai oleh-oleh/draf SOP satuan.
@@ -40,7 +42,7 @@ Kalau waktunya hanya 30 menit: lewati slide 9 (mata), 17 (praktik), dan ringkas 
 - Tawaran tindak lanjut: pelatihan lanjutan atau riset bersama ITK (cukup 1 kalimat, bukan jualan).
 
 ## Yang masih harus disiapkan (setelah disepakati)
-- 4 gambar kuis (2 asli bebas lisensi + 2 buatan AI sendiri; tanpa wajah tokoh/anggota nyata).
+- Gambar kuis sudah ada (Wikimedia Commons, lihat `RUJUKAN.md`); opsional diganti versi bertema lokal.
 - 3 kasus praktik + lembar verifikasi (+ versi Google Form untuk peserta daring).
 - Rekaman demo: Google Lens, InVID-WeVerify, baca EXIF, kirim WA biasa vs dokumen.
 - Cek ulang angka dari media (Bareskrim, Komdigi) ke rilis resmi, dan pasal UU ITE ke JDIH.

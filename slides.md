@@ -23,8 +23,10 @@ class: sampul
 
 # Asli atau rekayasa? <span class="biru">Memverifikasi foto dan video di era AI</span>
 
-<p class="redup" style="font-size:24px;max-width:860px;margin-top:20px">Cara memeriksa konten digital sebelum dipercaya, disebarkan, atau dijadikan dasar tindakan.</p>
+<p class="redup" style="font-size:23px;max-width:860px;margin-top:18px">Cara memeriksa konten digital sebelum dipercaya, disebarkan, atau dijadikan dasar tindakan.</p>
 </div>
+
+<SampulAlur />
 
 <div class="meta">
 <div>
@@ -32,13 +34,15 @@ class: sampul
 <p class="redup">Dosen Sistem Informasi, Institut Teknologi Kalimantan</p>
 </div>
 <div style="text-align:right">
-<p class="redup">Draf untuk diskusi dengan panitia</p>
+<p class="redup mono" style="font-size:14px">draf untuk diskusi dengan panitia</p>
 </div>
 </div>
 
 <!--
 DRAF. Judul, durasi, dan susunan menunggu kesepakatan dengan panitia (lihat BAHAN-DISKUSI.md).
-Pembuka 1 kalimat: hari ini kita tidak belajar menjadi ahli forensik, tetapi belajar kapan harus curiga, apa yang dicek dulu, dan kapan harus menyerahkan ke ahli.
+Pembuka: hari ini kita tidak belajar menjadi ahli forensik, tetapi belajar kapan harus curiga,
+apa yang dicek dulu, dan kapan harus menyerahkan ke ahli. Gambar di sampul = isi sesi ini:
+konten beredar → diperiksa → asli, belum pasti, atau rekayasa.
 -->
 
 ---
@@ -50,17 +54,17 @@ bagian: Pembuka
 <div class="grid gap-12" style="grid-template-columns: 280px 1fr; margin-top:30px; align-items:start">
 <div class="potret"><img src="/aidil.png" alt="Aidil Saputra Kirsan"></div>
 <div>
-<div class="baris" style="grid-template-columns:170px 1fr;border-top:none">
-<span class="no" style="font-size:16px">KAMPUS</span>
+<div class="baris" style="grid-template-columns:140px 1fr;border-top:none" v-click>
+<span class="label-kolom">kampus</span>
 <span><span class="nama">Dosen Sistem Informasi ITK</span><br><span class="ket">sejak 2020 · Kepala Lab Inovasi Digital FSTI</span></span>
 </div>
-<div class="baris" style="grid-template-columns:170px 1fr">
-<span class="no" style="font-size:16px">AUDIT</span>
+<div class="baris" style="grid-template-columns:140px 1fr" v-click>
+<span class="label-kolom">audit</span>
 <span><span class="nama">Auditor Teknologi Informasi</span><br><span class="ket">tersertifikasi BNSP (2024)</span></span>
 </div>
-<div class="baris" style="grid-template-columns:170px 1fr">
-<span class="no" style="font-size:16px">INDUSTRI</span>
-<span><span class="nama"><img src="/myst-mark.svg" alt="" class="logo-sebaris"> Founder Myst Tech</span><br><span class="ket">membangun aplikasi berbasis AI, termasuk pembaca dokumen KTP/KK</span></span>
+<div class="baris" style="grid-template-columns:140px 1fr" v-click>
+<span class="label-kolom">industri</span>
+<span><span class="nama"><img src="/myst-mark.svg" alt="" class="logo-sebaris"> Founder Myst Tech</span><br><span class="ket">membangun aplikasi AI — termasuk yang membaca foto KTP dan KK</span></span>
 </div>
 </div>
 </div>
@@ -81,411 +85,307 @@ clicks: 1
 
 <div style="margin-top:34px">
 <Kuis :buka="$clicks >= 1" :item="[
-  { src: '/kuis/a.jpg', jawab: 'ai', ket: '[keterangan: model pembuat, tanda yang bisa dicari]' },
-  { src: '/kuis/b.jpg', jawab: 'asli', ket: '[keterangan: sumber foto asli]' },
-  { src: '/kuis/c.jpg', jawab: 'ai', ket: '[keterangan]' },
-  { src: '/kuis/d.jpg', jawab: 'asli', ket: '[keterangan]' },
+  { src: '/kuis/a.jpg', jawab: 'ai', ket: 'Cahaya keemasan, setiap detail “terlalu rapi”.' },
+  { src: '/kuis/b.jpg', jawab: 'asli', ket: 'Positano, Italia. Mendung, perahu berserakan.' },
+  { src: '/kuis/c.jpg', jawab: 'ai', ket: 'Tata saji ala iklan, latar gelap kabur.' },
+  { src: '/kuis/d.jpg', jawab: 'asli', ket: 'Sate Madura. Piring warung, cahaya apa adanya.' },
 ]" />
 </div>
 
-<p class="redup" style="font-size:17px;margin-top:22px">Angkat tangan untuk setiap gambar. Peserta daring: tulis jawaban di kolom chat, mis. “A asli, B AI…”.</p>
+<p class="sumber">Wikimedia Commons — A: Dennis S. Hurd (AI), CC BY 4.0 · B: Stephanie Krist, CC0 · C: Dennis S. Hurd (AI), CC0 · D: Happywu, CC BY-SA 4.0.</p>
 
 <!--
-Kuis 3 menit. Gambar BELUM ADA: siapkan 2 foto asli (bebas lisensi, kredit dicatat) + 2 gambar buatan AI
-yang dibuat sendiri (jangan wajah tokoh nyata / anggota Polri). Sebaiknya bertema lokal: jalan Balikpapan, pasar, kerumunan.
-Tips: pilih gambar AI yang BAGUS, bukan yang jelas cacat — supaya poin slide berikutnya terasa.
+Kuis 3 menit. Minta angkat tangan per gambar; peserta daring tulis di chat "A asli, B AI…".
 [klik] buka jawaban. Biasanya hasil ruangan mendekati menebak acak.
+Pelajaran: gambar AI sering TERLALU SEMPURNA, foto asli tampak biasa. Tapi ini bukan aturan pasti —
+AI bisa diminta membuat gambar yang "biasa" dan buram.
+Bisa diganti gambar bertema lokal (Balikpapan) buatan sendiri; jangan wajah tokoh nyata / anggota Polri.
 -->
 
 ---
 bagian: Kuis
+clicks: 3
 ---
 
 # Kalau tebakan kita meleset, <span class="biru">itu wajar</span>
 
-<div class="grid gap-16" style="grid-template-columns: 1fr 1fr; margin-top:40px">
-<div class="kolom">
-<p class="no">STUDI PNAS, 2022 · 315 PESERTA</p>
-<p class="sorot aksen">48%</p>
-<p>akurasi menebak wajah asli vs buatan AI. <b>Lebih rendah dari lempar koin (50%).</b></p>
-<p class="redup" style="font-size:17px">Setelah dilatih dan diberi umpan balik: naik hanya ke <b>59%</b>. Wajah buatan AI bahkan dinilai <b>lebih dapat dipercaya</b>.</p>
-</div>
-<div class="kolom" v-click>
-<p class="no">STUDI iPROOV, 2025 · 2.000 PESERTA</p>
-<p class="sorot merah">0,1%</p>
-<p>yang berhasil membedakan <b>semua</b> foto dan video asli/palsu dengan benar, padahal sudah diberi tahu ada deepfake.</p>
-<p class="redup" style="font-size:17px">Lebih dari 60% peserta yakin dengan kemampuannya.</p>
-</div>
+<div style="margin-top:22px">
+<SkalaTebak />
 </div>
 
-<p class="sumber">Nightingale &amp; Farid, “AI-synthesized faces are indistinguishable from real faces and more trustworthy”, PNAS 119(8), 2022. iProov, studi “deepfake blindspot”, Feb 2025 (studi vendor, Inggris &amp; AS — baca sebagai indikasi).</p>
+<p class="sumber">Nightingale &amp; Farid, “AI-synthesized faces are indistinguishable from real faces and more trustworthy”, PNAS 119(8), 2022. iProov, studi “deepfake blindspot”, Feb 2025 — studi vendor, Inggris &amp; AS.</p>
 
 <!--
-Pesan: mata kita bukan alat ukur. Bahkan yang yakin pun salah.
-Jadi materi hari ini bukan "cara melihat lebih teliti", tapi "cara memeriksa yang tidak bergantung pada mata saja".
-Catatan: iProov menjual layanan verifikasi biometrik — sebut terus terang bahwa ini studi vendor.
+[klik 1] 48%: rata-rata peserta sedikit di bawah lempar koin.
+[klik 2] Dilatih dan diberi umpan balik pun hanya 59%.
+[klik 3] Studi iProov: 0,1% benar semua. iProov menjual layanan verifikasi biometrik — sebut terus terang ini studi vendor.
+Pesan: mata kita bukan alat ukur. Materi hari ini adalah cara memeriksa yang tidak bergantung pada mata saja.
 -->
 
 ---
 bagian: Ancaman
+clicks: 5
 ---
 
 # Ini sudah terjadi di Indonesia: <span class="biru">wajah Presiden dipakai untuk menipu</span>
 
-<div class="grid gap-14" style="grid-template-columns: 1.1fr 1fr; margin-top:36px; align-items:start">
-<div>
-<div class="tanya">“Bapak/Ibu terpilih menerima bantuan pemerintah. Hubungi nomor WhatsApp berikut…”</div>
-<p class="redup" style="font-size:17px">Pola pesan dalam video deepfake (ilustrasi, bukan kutipan asli).</p>
-
-- **Jan–Feb 2025:** Dittipidsiber Bareskrim menangkap pelaku video deepfake Presiden, Wapres, dan Menkeu yang menawarkan “bantuan”
-- Bahan: video resmi pejabat yang **diunduh dari media sosial**
-- Hasil analisis forensik Polri: video **dinyatakan palsu**
-
-</div>
-<div class="kotak">
-<p class="no mono aksen" style="font-size:13px;margin:0">SATU PELAKU</p>
-<p class="sorot-kecil">±100 korban</p>
-<p class="redup" style="font-size:16px;margin-top:0">sejak 2024, keuntungan ±Rp65 juta</p>
-<p class="no mono aksen" style="font-size:13px;margin:18px 0 0">SECARA NASIONAL (KOMDIGI)</p>
-<p class="sorot-kecil">Rp700 miliar</p>
-<p class="redup" style="font-size:16px;margin-top:0">kerugian penipuan berbasis AI yang dilaporkan</p>
-</div>
+<div style="margin-top:36px">
+<ModusDeepfake />
 </div>
 
-<p class="sumber">Bisnis.com (7 Feb 2025), “Bareskrim kembali tangkap pelaku penipuan pakai video AI Prabowo”; detik.com, analisis forensik deepfake; Bisnis.com (23 Okt 2025), Komdigi soal kerugian penipuan berbasis AI. Angka dari liputan media — cek ulang ke rilis resmi.</p>
+<div class="grid gap-16" style="grid-template-columns: 1fr 1fr; margin-top:34px; border-top:1px solid var(--garis); padding-top:18px">
+<div class="angka-baris"><p class="sorot-kecil">± 100 korban</p><p class="redup">satu pelaku, sejak 2024 — keuntungan ±Rp65 juta</p></div>
+<div class="angka-baris"><p class="sorot-kecil merah">Rp<AngkaNaik :sampai="700" /> miliar</p><p class="redup">kerugian penipuan berbasis AI secara nasional (Komdigi)</p></div>
+</div>
+
+<p class="sumber">Bisnis.com (7 Feb 2025), penangkapan pelaku video AI Presiden; detik.com, analisis forensik; Bisnis.com (23 Okt 2025), Komdigi. Angka dari liputan media — cek ulang ke rilis resmi.</p>
 
 <!--
-Peserta kepolisian kemungkinan lebih tahu detail kasus ini daripada saya — undang mereka bercerita.
-Kalau panitia punya kasus lokal Kaltim/Balikpapan yang boleh dibahas, ganti/tambahkan di sini.
+[klik 1–5] Satu langkah per klik. Pola pesan "bantuan pemerintah" adalah ilustrasi, bukan kutipan asli.
+Peserta kemungkinan lebih tahu detail kasus ini — undang mereka bercerita.
+Kalau panitia punya kasus lokal Kaltim yang boleh dibahas, tambahkan di sini.
 -->
 
 ---
 bagian: Jenis rekayasa
+clicks: 5
 ---
 
 # Tidak semua hoaks butuh AI: <span class="biru">rekayasa punya empat tingkat</span>
 
-<div class="spektrum">
-<div>
-<div class="pita" style="background:#d9c27a"></div>
-<p class="no">01</p>
-<p class="judul">Konteks dipelintir</p>
-<p class="ket">Foto/video <b>asli</b>, tapi waktu, tempat, atau ceritanya salah.</p>
-<p class="contoh">Foto banjir tahun lalu disebut “hari ini”. Kerusuhan di negara lain disebut di kota kita.</p>
+<div style="margin-top:30px">
+<SpektrumRekayasa />
 </div>
-<div>
-<div class="pita" style="background:#d99a6a"></div>
-<p class="no">02</p>
-<p class="judul">Dipotong &amp; disunting</p>
-<p class="ket">Bagian dihapus, dipotong, diperlambat, ditambah teks/suara.</p>
-<p class="contoh">Video pidato dipotong sehingga maknanya berbalik.</p>
-</div>
-<div>
-<div class="pita" style="background:#cf6a4f"></div>
-<p class="no">03</p>
-<p class="judul">Diubah dengan AI</p>
-<p class="ket">Wajah ditukar, bibir disinkronkan, suara dikloning.</p>
-<p class="contoh">Video asli pejabat, mulut dan suara diganti (kasus slide sebelumnya).</p>
-</div>
-<div>
-<div class="pita" style="background:#c0392b"></div>
-<p class="no">04</p>
-<p class="judul">Dibuat penuh oleh AI</p>
-<p class="ket">Tidak pernah ada kamera. Seluruh gambar/video hasil perintah teks.</p>
-<p class="contoh">Foto “kejadian” yang tidak pernah terjadi.</p>
-</div>
-</div>
-
-<p v-click style="margin-top:40px;font-size:22px">Tingkat 01 dan 02 <b>tidak bisa ditangkap detektor AI</b>, karena gambarnya memang asli.</p>
 
 <!--
-Ini peta dasar. Banyak orang hanya membayangkan tingkat 04.
-Penekanan: detektor AI hanya relevan untuk tingkat 03–04. Untuk 01–02, alatnya adalah pengecekan konteks dan asal-usul.
+[klik 1–4] Satu tingkat per klik. Banyak orang hanya membayangkan tingkat 04.
+[klik 5] Pembagian penting: detektor AI hanya relevan untuk 03–04. Untuk 01–02, alatnya konteks dan asal-usul.
 -->
 
 ---
-bagian: Pertanyaan inti
-class: malam
+bagian: Jenis rekayasa
+clicks: 4
 ---
 
-# Pertanyaannya bukan “AI atau bukan?”
+# Tingkat 04: rekaman bodycam polisi <span class="biru">yang tidak pernah direkam</span>
 
-<v-click>
+<div style="margin-top:26px">
+<Sorot video="/contoh/bodycam-sora.webm" src="/contoh/bodycam-sora.jpg" :tinggi="410" :rasio="0.55" :titik="[
+  { x: 50, y: 4, judul: 'Stempel waktu & kode perangkat', ket: 'Meniru tampilan kamera tubuh asli — memberi kesan resmi.' },
+  { x: 58, y: 33, judul: 'Malam, sirene, kamera goyang', ket: 'Gambar buram secara wajar, sehingga cacat AI tersamar.' },
+  { x: 22, y: 92, judul: 'Watermark kecil di pojok', ket: 'Satu-satunya tanda pembuatnya — dan mudah dipotong.' },
+]">
+<li v-click="4" class="pancing">Video seperti ini beredar setelah sebuah insiden, berjudul “rekaman bocor”. <b>Apa yang Bapak/Ibu periksa pertama kali?</b></li>
+</Sorot>
+</div>
 
-<h1 class="biru" style="margin-top:14px">Tetapi: apakah konten ini <span v-mark="{ at: 1, type: 'underline', color: '#0b7a6e', strokeWidth: 4 }">benar menunjukkan</span> apa yang diklaim?</h1>
+<p class="sumber">“Example of Sora AI-Generated Police Body Camera Footage”, Wikimedia Commons, domain publik; orang di video = pengunggah, setuju dipublikasi. Dibuat dengan Sora, 10 detik.</p>
 
-</v-click>
+<!--
+Slide paling relevan untuk polisi: bukan wajah pejabat, tapi "bukti" yang meniru alat kerja polisi sendiri.
+Video berputar otomatis. [klik 1–3] penanda. [klik 4] pertanyaan ke peserta.
+Jawaban yang diharapkan: cari sumber pertama, cek apakah ada insiden di waktu/lokasi itu,
+minta rekaman asli dari sistem bodycam resmi (asal-usul).
+-->
 
-<div class="grid gap-10" style="grid-template-columns: repeat(4, 1fr); margin-top:70px" v-click>
-<div class="kolom"><p class="no">SIAPA</p><p>yang pertama mengunggah?</p></div>
-<div class="kolom"><p class="no">KAPAN</p><p>sebenarnya diambil?</p></div>
-<div class="kolom"><p class="no">DI MANA</p><p>lokasinya cocok?</p></div>
-<div class="kolom"><p class="no">BAGAIMANA</p><p>ada tanda diubah/dibuat?</p></div>
+---
+layout: center
+class: malam
+bagian: Pertanyaan inti
+---
+
+<div style="max-width:1020px">
+<h1 style="font-size:60px">Pertanyaannya bukan “AI atau bukan?”</h1>
+<h1 style="font-size:60px;margin-top:14px" class="biru">Tetapi: apakah konten ini <span v-mark="{ at: 1, type: 'underline', color: '#0b7a6e', strokeWidth: 4 }">benar menunjukkan</span> apa yang diklaim?</h1>
+<p v-click="2" class="mono redup" style="font-size:18px;margin-top:40px">siapa yang pertama mengunggah · kapan diambil · di mana · adakah tanda diubah</p>
 </div>
 
 <!--
-Ini pernyataan inti sesi. Foto asli dengan klaim palsu tetap hoaks.
-Foto buatan AI yang diberi label jelas "ilustrasi" bukan hoaks.
+Jeda. Ini pernyataan inti sesi.
+Foto asli dengan klaim palsu tetap hoaks. Gambar AI yang diberi label jelas "ilustrasi" bukan hoaks.
 -->
 
 ---
 bagian: Perbandingan
+clicks: 5
 ---
 
 # Empat cara memeriksa, <span class="biru">masing-masing punya titik buta</span>
 
-<div style="margin-top:28px">
-
-| Cara | Yang diperiksa | Kuat untuk | Titik butanya | Bisa jadi dasar tindakan? |
-|---|---|---|---|---|
-| **Mata** | jari, teks, bayangan, pantulan, gerak bibir | menyaring awal, cepat | model baru makin rapi; akurasi manusia ±50% | <span class="status palsu">TIDAK SENDIRIAN</span> |
-| **Asal-usul file** | metadata, Content Credentials (C2PA), watermark | membuktikan sumber bila tersedia | sering hilang saat dikirim lewat WA/medsos | <span class="status asli">KUAT BILA ADA</span> |
-| **Alat deteksi AI** | pola piksel, frekuensi, artefak kompresi | tingkat 03–04 | salah positif &amp; negatif; kalah oleh model baru dan kompresi ulang | <span class="status ragu">PETUNJUK</span> |
-| **Konteks (OSINT)** | unggahan pertama, lokasi, waktu, saksi | tingkat 01–02 | butuh waktu dan keterampilan | <span class="status asli">KUAT</span> |
-
+<div style="margin-top:22px">
+<EmpatLensa />
 </div>
 
-<p v-click style="margin-top:22px;font-size:21px">Tidak ada satu cara yang cukup. <b>Kesimpulan yang kuat datang dari beberapa cara yang saling menguatkan.</b></p>
-
-<p class="sumber">Akurasi manusia: Nightingale &amp; Farid (2022). Batas detektor: lihat slide 11.</p>
+<p class="sumber">Posisi pada peta = penilaian kualitatif untuk diskusi, bukan hasil pengukuran. Akurasi mata: Nightingale &amp; Farid (2022).</p>
 
 <!--
-Ini slide perbandingan utama yang diminta panitia. Ajak peserta: selama ini satuan Bapak/Ibu paling sering memakai cara yang mana?
-Biasanya: mata + "tanya grup". Yang paling jarang: asal-usul file.
+Ini slide perbandingan yang diminta panitia. [klik 1–4] satu cara per klik, panel kanan: kuat untuk / titik buta.
+Asal-usul punya garis putus-putus: sangat kuat bila jejaknya ada, lemah bila sudah hilang (lewat WA).
+[klik 5] Garis biru: kesimpulan kuat = beberapa cara saling menguatkan.
+Tanya peserta: selama ini satuan Bapak/Ibu paling sering memakai cara yang mana? Biasanya: mata + "tanya grup".
 -->
 
 ---
 bagian: Cara 1 · Mata
+clicks: 5
 ---
 
 # Mata manusia: <span class="biru">penyaring awal, bukan hakim</span>
 
-<div class="grid gap-14" style="grid-template-columns: 1fr 1fr; margin-top:32px">
-<div>
-<h2>Foto</h2>
-
-- **Tangan dan jari** — jumlah, sambungan, menyatu dengan benda
-- **Tulisan** — papan nama, plat nomor, seragam: huruf rusak/tak bermakna
-- **Cahaya dan bayangan** — arah bayangan tidak konsisten
-- **Pantulan** — kaca, mata, air tidak cocok dengan adegan
-- **Detail berulang** — wajah kerumunan, pola latar yang “meleleh”
-
+<div style="margin-top:24px">
+<Sorot src="/contoh/kerangka-raksasa.jpg" :tinggi="360" :rasio="1.5" kredit="“Penggalian kerangka raksasa” — seluruhnya buatan Midjourney · domain publik, Wikimedia Commons" :titik="[
+  { x: 16, y: 63, judul: 'Tangan', ket: 'Tenggelam ke tanah, menyatu dengan benda.' },
+  { x: 52, y: 30, judul: 'Wajah di kerumunan', ket: 'Mirip satu sama lain, ekspresi seragam.' },
+  { x: 47, y: 66, judul: 'Objek utama', ket: 'Terlalu utuh, gigi terlalu rapi untuk fosil.' },
+  { x: 82, y: 12, judul: 'Cahaya', ket: 'Sinematik seperti poster film, bukan foto lapangan.' },
+]">
+<li v-click="5" class="pancing">Tanda-tanda ini <b>cepat usang</b>. Tidak menemukan cacat bukan berarti asli.</li>
+</Sorot>
 </div>
-<div>
-<h2>Video &amp; suara</h2>
-
-- **Mulut dan gigi** — sinkron bibir, gigi kabur
-- **Batas wajah** — tepi rambut, telinga, kacamata berkedip
-- **Gerak kepala** — wajah “bergeser” saat menoleh
-- **Suara** — datar, tanpa napas, intonasi tak wajar
-- **Kualitas sengaja jelek** — buram/kecil untuk menutupi cacat
-
-</div>
-</div>
-
-<p v-click class="kotak" style="margin-top:24px;font-size:18px;padding:14px 20px"><span class="status ragu">PERHATIAN</span>&nbsp; Tanda-tanda ini <b>cepat usang</b>. Tidak menemukan cacat ≠ asli.</p>
 
 <!--
-Kalau ada waktu: tunjukkan 1 contoh gambar AI dengan cacat (perbesar bagian tangan/tulisan).
-Tekankan: daftar ini berguna untuk curiga, BUKAN untuk menyimpulkan asli.
+Ajak peserta mencari kejanggalan dulu sebelum klik. [klik 1–4] penanda.
+Lalu tanya: kalau gambarnya dikecilkan dan dikirim di grup WA dengan judul "penemuan di Kalimantan", masihkah kita melihatnya?
+Untuk video: perhatikan sinkron bibir, tepi wajah, gigi kabur, suara tanpa napas; kualitas sengaja jelek untuk menutupi cacat.
 -->
 
 ---
 bagian: Cara 2 · Asal-usul
+clicks: 4
 ---
 
-# Asal-usul file: <span class="biru">bukti terkuat, tapi paling mudah hilang</span>
+# Asal-usul file: <span class="biru">jejak terkuat, tapi paling mudah hilang</span>
 
-<div class="grid gap-10" style="grid-template-columns: repeat(3, 1fr); margin-top:34px">
-<div class="kolom">
-<p class="no">METADATA (EXIF)</p>
-<h2>Jejak kamera</h2>
-<p>Merek/tipe HP, waktu ambil, kadang lokasi GPS dan perangkat lunak penyunting.</p>
-<p class="redup" style="font-size:16px">Alat: ExifTool, fitur “info” di galeri.</p>
-</div>
-<div class="kolom">
-<p class="no">CONTENT CREDENTIALS (C2PA)</p>
-<h2>“Label gizi” digital</h2>
-<p>Catatan bertanda tangan: dibuat dengan kamera/aplikasi apa, diedit apa saja.</p>
-<p class="redup" style="font-size:16px">Alat: contentcredentials.org/verify</p>
-</div>
-<div class="kolom">
-<p class="no">WATERMARK TAK TERLIHAT</p>
-<h2>Tanda di dalam piksel</h2>
-<p>Sebagian pembuat AI menanam tanda yang tetap ada meski metadata dihapus (mis. SynthID dari Google).</p>
-<p class="redup" style="font-size:16px">Hanya terbaca alat dari pembuatnya.</p>
-</div>
+<div style="margin-top:34px">
+<PerjalananFile />
 </div>
 
-<div v-click class="kotak" style="margin-top:28px;padding:16px 22px">
-<p style="margin:0;font-size:18px"><span class="status ragu">PENTING</span>&nbsp; Foto yang dikirim biasa lewat WhatsApp/medsos umumnya <b>kehilangan metadata</b>. Minta file asli (kirim sebagai <b>dokumen</b>, atau ambil langsung dari perangkat). <b>Metadata kosong bukan bukti palsu</b> — dan metadata juga bisa dipalsukan.</p>
-</div>
+<p v-click="4" style="margin-top:26px;font-size:21px">Minta <b>file paling asli</b> — kirim sebagai dokumen, atau ambil langsung dari perangkat. <span class="biru"><b>Metadata kosong bukan bukti palsu</b></span>, dan metadata juga bisa dipalsukan.</p>
 
-<p class="sumber">C2PA: Coalition for Content Provenance and Authenticity (c2pa.org). Perilaku WhatsApp: pengujian umum, dapat berubah per versi — demo ulang sebelum acara.</p>
+<p class="sumber">C2PA / Content Credentials: c2pa.org, cek di contentcredentials.org/verify. Watermark tak terlihat mis. SynthID (Google), terbaca hanya oleh alat pembuatnya. Perilaku WhatsApp dapat berubah per versi — demo ulang sebelum acara.</p>
 
 <!--
-Bagi penyidik, ini poin paling praktis: amankan file paling asli sedini mungkin.
-Demo singkat (opsional): kirim satu foto lewat WA biasa vs sebagai dokumen, lalu bandingkan metadata.
+[klik 1] Di kamera: jejak lengkap. [klik 2] WA biasa: dicoret. [klik 3] Screenshot: tinggal piksel.
+[klik 4] Poin paling praktis untuk penyidik: amankan file paling asli sedini mungkin.
+Demo opsional: kirim satu foto lewat WA biasa vs sebagai dokumen, lalu bandingkan metadatanya.
 -->
 
 ---
 bagian: Cara 3 · Alat deteksi
+clicks: 2
 ---
 
 # Alat deteksi AI memberi <span class="biru">peluang, bukan vonis</span>
 
-<div class="grid gap-14" style="grid-template-columns: 1fr 1fr; margin-top:32px; align-items:start">
-<div>
-<h2>Contoh alat (gratis/terbuka)</h2>
-
-- **InVID-WeVerify** — ekstensi browser: pecah video jadi bingkai kunci, cari balik, baca metadata
-- **Forensically** — analisis level error (ELA), deteksi bagian yang disalin-tempel
-- **Detektor AI komersial** — memberi skor “kemungkinan buatan AI”
-
-</div>
-<div class="kotak">
-<p class="mono" style="font-size:13px;margin:0 0 6px;color:var(--samar)">CONTOH HASIL DETEKTOR</p>
-<p class="sorot-kecil merah" style="margin:0">87% AI</p>
-<p style="font-size:17px">artinya <b>bukan</b> “87% pasti palsu”. Artinya: menurut model ini, pola gambarnya mirip contoh AI yang pernah ia pelajari.</p>
-
-- Bisa **salah menuduh** foto asli yang banyak diedit/kompres
-- Bisa **lolos** untuk model AI terbaru
-- Hasil beda alat bisa **saling bertentangan**
-
-</div>
+<div style="margin-top:32px">
+<SkorDetektor src="/kuis/a.jpg" />
 </div>
 
-<p class="sumber">InVID-WeVerify: proyek Uni Eropa untuk verifikasi media (weverify.eu). Forensically: 29a.ch/photo-forensics. Contoh skor = ilustrasi.</p>
+<p class="mono redup" style="font-size:14px;margin-top:30px">alat gratis untuk mulai: InVID-WeVerify (pecah video jadi bingkai, cari balik, metadata) · Forensically (analisis error level, salin-tempel)</p>
+
+<p class="sumber">Skor = ilustrasi. InVID-WeVerify: weverify.eu. Forensically: 29a.ch/photo-forensics. Gambar: Dennis S. Hurd (AI), CC BY 4.0.</p>
 
 <!--
-Kalimat kunci untuk penyidik: "Jangan pernah menulis di laporan 'menurut aplikasi X, 87% palsu' sebagai satu-satunya dasar."
-Gunakan detektor untuk memutuskan APA yang perlu diperiksa lebih dalam.
+[klik 1] Satu gambar, tiga alat, tiga jawaban. [klik 2] Arti angka.
+Kalimat kunci: jangan menulis di laporan "menurut aplikasi X, 87% palsu" sebagai satu-satunya dasar.
+Detektor dipakai untuk memutuskan APA yang perlu diperiksa lebih dalam.
 -->
 
 ---
 bagian: Cara 4 · Konteks
+clicks: 4
 ---
 
-# Konteks (OSINT): <span class="biru">cara paling kuat untuk hoaks sehari-hari</span>
+# Konteks (OSINT): <span class="biru">cara paling ampuh untuk hoaks sehari-hari</span>
 
-<div class="alur" style="grid-template-columns: repeat(4, 1fr); margin-top:40px">
-<div><p class="tahap">CARI BALIK</p><p class="judul">Pernah muncul sebelumnya?</p><p class="ket">Google Lens, TinEye, Yandex. Video: ambil bingkai kunci dulu.</p></div>
-<div><p class="tahap">SUMBER PERTAMA</p><p class="judul">Siapa yang mengunggah pertama?</p><p class="ket">Urutkan waktu unggah; akun asli atau baru dibuat?</p></div>
-<div><p class="tahap">GEOLOKASI</p><p class="judul">Tempatnya cocok?</p><p class="ket">Rambu, toko, bangunan → cocokkan dengan Google Maps/Street View.</p></div>
-<div><p class="tahap">KRONOLOKASI</p><p class="judul">Waktunya cocok?</p><p class="ket">Arah bayangan matahari (SunCalc), cuaca, peristiwa pada hari itu.</p></div>
+<div style="margin-top:30px">
+<JejakUnggahan />
 </div>
 
-<div class="grid gap-10" style="grid-template-columns: 1fr 1fr; margin-top:40px" v-click>
-<div class="kolom"><p class="no">KEUNGGULAN</p><p>Tetap bekerja walau gambar sudah dikompres, dipotong, atau dibuat oleh AI terbaru.</p></div>
-<div class="kolom"><p class="no">RUJUKAN CEK FAKTA</p><p>turnbackhoax.id (Mafindo), cekfakta.com, laman klarifikasi Komdigi.</p></div>
-</div>
+<p class="sumber">Seluruh kasus di slide ini ilustrasi. Alat: Google Lens, TinEye, Yandex (cari balik); Google Maps/Street View; SunCalc. Rujukan cek fakta: turnbackhoax.id (Mafindo), cekfakta.com.</p>
 
 <!--
-Ini yang paling bisa langsung dipakai anggota di lapangan dan humas.
-Demo 2 menit (disarankan): ambil 1 foto viral lama → Google Lens → ketemu unggahan aslinya bertahun-tahun lalu.
+[klik 1] Cari balik menemukan unggahan lebih lama. [klik 2] Sumber pertama: 2019, kota lain.
+[klik 3] Geolokasi & kronolokasi. [klik 4] Kesimpulan: konteks dipelintir — tidak ada detektor AI yang menangkapnya.
+Demo 2 menit (disarankan): ambil satu foto viral lama → Google Lens → ketemu unggahan aslinya.
 -->
 
 ---
 bagian: Alur kerja
+clicks: 6
 ---
 
-# Lima langkah sebelum menyimpulkan: <span class="biru">dari pesan masuk sampai laporan</span>
+# Lima langkah sebelum menyimpulkan, <span class="biru">dari pesan masuk sampai laporan</span>
 
-<div class="alur" style="margin-top:44px">
-<div><p class="tahap">01</p><p class="judul">Amankan</p><p class="ket">Simpan file paling asli + tautan + tangkapan layar unggahan. Catat waktu &amp; hash.</p></div>
-<div><p class="tahap">02</p><p class="judul">Asal-usul</p><p class="ket">Metadata, Content Credentials, watermark.</p></div>
-<div><p class="tahap">03</p><p class="judul">Konteks</p><p class="ket">Cari balik, sumber pertama, lokasi, waktu.</p></div>
-<div><p class="tahap">04</p><p class="judul">Teknis</p><p class="ket">Periksa visual + alat deteksi. Bandingkan beberapa alat.</p></div>
-<div><p class="tahap">05</p><p class="judul">Simpulkan</p><p class="ket">Pakai tingkat keyakinan, catat dasar setiap temuan.</p></div>
-</div>
-
-<div class="grid gap-10" style="grid-template-columns: 1fr 1fr; margin-top:44px">
-<div class="kolom" v-click><p class="no">KENAPA “AMANKAN” DULUAN</p><p>Unggahan bisa dihapus, file bisa dikompres ulang. Yang hilang di langkah 01 tidak bisa diperiksa di langkah 02–04.</p></div>
-<div class="kolom" v-click><p class="no">KAPAN DISERAHKAN KE AHLI</p><p>Bila konten akan menjadi <b>alat bukti</b> atau dasar penindakan: ke laboratorium forensik / ahli digital.</p></div>
+<div style="margin-top:22px">
+<AlurVerifikasi />
 </div>
 
 <!--
-Ini bisa menjadi draf SOP sederhana untuk satuan. Tawarkan untuk disusun bersama di sesi diskusi/praktik.
-Hash: sidik jari file (mis. SHA-256). Bila satu bit berubah, hash berubah — membuktikan file tidak diutak-atik sejak diamankan.
+[klik 1–5] Satu gerbang per klik. [klik 6] Cabang: bila akan jadi alat bukti → laboratorium forensik.
+Ini bisa jadi draf SOP satuan — tawarkan untuk disusun bersama di sesi diskusi/praktik.
 -->
 
 ---
 bagian: Alur kerja
+clicks: 3
 ---
 
 # Jangan hanya “asli” atau “hoaks”: <span class="biru">tulis tingkat keyakinannya</span>
 
-<div class="tangga" style="margin-top:34px">
-<div><span class="status asli">TERVERIFIKASI ASLI</span><p>Sumber pertama jelas, konteks cocok, asal-usul file mendukung.</p></div>
-<div><span class="status asli" style="opacity:.75">KONSISTEN, BELUM TERVERIFIKASI</span><p>Tidak ditemukan kejanggalan, tapi sumber pertama belum ditemukan.</p></div>
-<div><span class="status ragu">TIDAK DAPAT DITENTUKAN</span><p>Bukti tidak cukup ke arah mana pun. <b>Ini jawaban yang sah.</b></p></div>
-<div><span class="status palsu" style="opacity:.75">ADA INDIKASI REKAYASA</span><p>Beberapa temuan janggal (visual/alat), belum dikonfirmasi.</p></div>
-<div><span class="status palsu">TERBUKTI REKAYASA</span><p>Ditemukan versi asli, konteks terbantah, atau dikonfirmasi ahli.</p></div>
+<div style="margin-top:30px">
+<SkalaKeyakinan />
 </div>
 
 <!--
+Kasus: video bodycam dari slide 7. Jarum bergeser setiap ada temuan baru.
+[klik 1] Baru masuk: tidak dapat ditentukan — jawaban yang sah. [klik 2] Indikasi. [klik 3] Terbukti.
 Menulis tingkat keyakinan melindungi dua arah: tidak gegabah menuduh, tidak gegabah membenarkan.
-"Tidak dapat ditentukan" lebih jujur daripada memaksa vonis — sama seperti AI yang lebih baik bilang "tidak tahu" daripada menebak.
 -->
 
 ---
-bagian: Bahaya sebaliknya
+layout: center
 class: malam
+bagian: Bahaya sebaliknya
 ---
 
-# Bahaya baru: bukti asli <span class="merah">disangkal sebagai “itu AI”</span>
+<div style="max-width:1060px">
+<h1 style="font-size:56px">Bahaya baru: bukti asli <span class="merah">disangkal sebagai “itu AI”</span></h1>
 
-<div class="grid gap-14" style="grid-template-columns: 1.2fr 1fr; margin-top:44px; align-items:start">
-<div>
-<p style="font-size:23px">Saat semua orang tahu deepfake itu ada, pelaku bisa berkata <b>“video itu rekayasa”</b> terhadap rekaman yang sebenarnya asli.</p>
-<p class="redup" style="font-size:19px">Para peneliti hukum menyebutnya <b><i>liar’s dividend</i></b> — “keuntungan bagi si pembohong”.</p>
-</div>
-<div class="kotak">
-<p class="mono" style="font-size:13px;margin:0 0 8px;color:var(--samar)">IMPLIKASI UNTUK PENYIDIK</p>
-
-- Verifikasi bukan hanya untuk membongkar yang palsu, tetapi untuk **mempertahankan yang asli**
-- Rantai pengamanan bukti (*chain of custody*) makin penting
-- Rekaman resmi (bodycam, CCTV) perlu dijaga asal-usulnya sejak awal
-
-</div>
+<div class="dua-arah">
+<div v-click><span class="label-kolom">video palsu</span><span class="panah-teks" /><span>dipercaya sebagai asli</span></div>
+<div v-click><span class="label-kolom">video asli</span><span class="panah-teks merah" /><span><b>“itu cuma AI”</b> — bukti disangkal</span></div>
 </div>
 
-<p class="sumber">Chesney &amp; Citron, “Deep Fakes: A Looming Challenge for Privacy, Democracy, and National Security”, California Law Review 107 (2019).</p>
+<p v-click style="font-size:21px;margin-top:34px;max-width:900px">Peneliti hukum menyebutnya <i>liar’s dividend</i>. Karena itu verifikasi bukan hanya untuk membongkar yang palsu, tetapi untuk <b>mempertahankan yang asli</b> — rekaman bodycam dan CCTV perlu dijaga asal-usulnya sejak awal.</p>
+</div>
+
+<p class="sumber">Chesney &amp; Citron, California Law Review 107 (2019). Europol Innovation Lab, “Facing reality? Law enforcement and the challenge of deepfakes” (2022, diperbarui 2024): deepfake dapat dipakai untuk memalsukan maupun meragukan bukti di persidangan.</p>
 
 <!--
-Ini sering jadi poin "aha" untuk aparat: deepfake bukan cuma soal hoaks, tapi soal pembuktian di pengadilan.
+Sering jadi poin "aha" untuk aparat: deepfake bukan cuma soal hoaks, tapi soal pembuktian di pengadilan.
 -->
 
 ---
 bagian: Hukum & pembuktian
+clicks: 3
 ---
 
-# Dari temuan ke alat bukti: <span class="biru">yang perlu dijaga sejak awal</span>
+# Dari temuan ke alat bukti: <span class="biru">rantai yang dijaga sejak awal</span>
 
-<div class="grid gap-14" style="grid-template-columns: 1fr 1fr; margin-top:32px">
-<div class="kolom">
-<p class="no">DASAR HUKUM YANG RELEVAN</p>
-
-- **UU ITE** (UU 11/2008 jo. UU 1/2024): informasi elektronik sebagai alat bukti (Ps. 5); manipulasi informasi elektronik agar seolah-olah otentik (Ps. 35); pemberitahuan bohong yang menimbulkan kerusuhan (Ps. 28 ayat 3)
-- **KUHP baru** (UU 1/2023), berlaku sejak 2 Januari 2026
-
-</div>
-<div class="kolom">
-<p class="no">YANG MEMBUAT TEMUAN BERTAHAN</p>
-
-- File asli diamankan, **hash** dicatat
-- Bekerja pada **salinan**, bukan file asli
-- Setiap langkah dan alat **dicatat** (siapa, kapan, alat apa)
-- Kesimpulan teknis untuk persidangan oleh **ahli forensik digital**
-
-</div>
+<div style="margin-top:40px">
+<RantaiBukti />
 </div>
 
-<p class="sumber">Rujukan pasal untuk diskusi; teks resmi di JDIH dan penafsiran oleh ahli hukum. Peserta dari kepolisian lebih berwenang di bagian ini — DRAF, minta masukan panitia.</p>
+<p class="mono redup" style="font-size:14px;margin-top:30px">dasar hukum untuk diskusi: UU ITE (UU 11/2008 jo. UU 1/2024) Ps. 5 — informasi elektronik sebagai alat bukti · Ps. 35 — manipulasi agar seolah otentik · Ps. 28 ayat 3 — pemberitahuan bohong yang menimbulkan kerusuhan · KUHP baru (UU 1/2023), berlaku 2 Januari 2026</p>
+
+<p class="sumber">Hash = SHA-256 nyata dari file kuis D dan salinannya yang diubah 1 byte. Teks pasal: rujuk JDIH; penafsiran oleh ahli hukum — DRAF, minta masukan panitia.</p>
 
 <!--
-Saya bukan ahli hukum: bagian ini saya sampaikan sebagai pengantar, lalu serahkan ke peserta/penyidik yang lebih paham.
-Usulkan ke panitia: apakah ada narasumber dari Ditressiber/Labfor yang bisa mengisi bagian ini?
+[klik 1] Rantai. [klik 2] Sidik jari file asli. [klik 3] Ubah satu byte → hash berubah total.
+Hash membuktikan file tidak diutak-atik sejak diamankan.
+Saya bukan ahli hukum: bagian pasal saya sampaikan sebagai pengantar, lalu serahkan ke penyidik yang lebih paham.
+Usulkan ke panitia: adakah narasumber Ditressiber/Labfor untuk bagian ini?
 -->
 
 ---
@@ -494,26 +394,23 @@ bagian: Praktik
 
 # Praktik 15 menit: <span class="biru">periksa tiga konten bersama</span>
 
-<div class="grid gap-10" style="grid-template-columns: repeat(3, 1fr); margin-top:34px">
-<div>
-<Tangkapan src="/praktik/kasus-1.jpg" label="Kasus 1 — foto lama, klaim baru" :tinggi="200" />
-<p class="redup" style="font-size:16px">Alat: Google Lens → temukan unggahan pertama.</p>
+<div style="margin-top:30px">
+<div class="baris" style="grid-template-columns:64px 1fr 1.1fr;border-top:none">
+<span class="no">01</span><span class="nama">Foto lama, klaim baru</span><span class="ket">Google Lens → temukan unggahan pertama, cocokkan lokasi.</span>
 </div>
-<div>
-<Tangkapan src="/praktik/kasus-2.jpg" label="Kasus 2 — gambar buatan AI" :tinggi="200" />
-<p class="redup" style="font-size:16px">Alat: periksa visual + 2 detektor, bandingkan.</p>
+<div class="baris" style="grid-template-columns:64px 1fr 1.1fr">
+<span class="no">02</span><span class="nama">Gambar buatan AI</span><span class="ket">Periksa visual, lalu bandingkan dua detektor.</span>
 </div>
-<div>
-<Tangkapan src="/praktik/kasus-3.jpg" label="Kasus 3 — foto asli, metadata lengkap" :tinggi="200" />
-<p class="redup" style="font-size:16px">Alat: baca EXIF, cocokkan lokasi &amp; waktu.</p>
+<div class="baris" style="grid-template-columns:64px 1fr 1.1fr">
+<span class="no">03</span><span class="nama">Foto asli dengan metadata</span><span class="ket">Baca EXIF, cocokkan waktu dan tempat.</span>
 </div>
 </div>
 
-<p style="margin-top:26px;font-size:19px">Per kelompok: isi <b>lembar verifikasi</b> (5 langkah + tingkat keyakinan). Peserta daring: versi Google Form.</p>
+<p style="margin-top:28px;font-size:20px">Tiap kelompok mengisi <b>lembar verifikasi</b>: lima langkah + tingkat keyakinan. <span class="redup">Peserta daring: versi Google Form.</span></p>
 
 <!--
-OPSIONAL — tergantung durasi & format dari panitia. Bisa diganti demo langsung oleh pembicara bila tidak ada sesi praktik.
-Semua kasus harus dibuat/dipilih sendiri: tanpa korban nyata, tanpa wajah anggota Polri/tokoh nyata.
+OPSIONAL — tergantung durasi & format dari panitia. Bisa diganti demo langsung oleh pembicara.
+Semua kasus dibuat/dipilih sendiri: tanpa korban nyata, tanpa wajah anggota Polri atau tokoh nyata.
 -->
 
 ---
@@ -523,14 +420,14 @@ bagian: Rekomendasi
 # Tiga hal yang bisa dimulai <span class="biru">minggu ini</span>
 
 <div style="margin-top:34px">
-<div class="baris" style="grid-template-columns:64px 1fr 1.2fr">
-<span class="no">01</span><span class="nama">Satu alur verifikasi tertulis</span><span class="ket">Lima langkah + lima tingkat keyakinan, satu halaman, dipakai semua anggota yang menangani laporan konten.</span>
+<div class="baris" style="grid-template-columns:64px 1fr 1.2fr;border-top:none" v-click>
+<span class="no">01</span><span class="nama">Satu alur verifikasi tertulis</span><span class="ket">Lima langkah + tingkat keyakinan, satu halaman, dipakai semua yang menangani laporan konten.</span>
 </div>
-<div class="baris" style="grid-template-columns:64px 1fr 1.2fr">
-<span class="no">02</span><span class="nama">Kebiasaan “amankan dulu”</span><span class="ket">File asli + tautan + tangkapan layar + hash, sebelum konten dihapus pengunggah.</span>
+<div class="baris" style="grid-template-columns:64px 1fr 1.2fr" v-click>
+<span class="no">02</span><span class="nama">Kebiasaan “amankan dulu”</span><span class="ket">File asli, tautan, tangkapan layar, dan hash — sebelum konten dihapus pengunggahnya.</span>
 </div>
-<div class="baris" style="grid-template-columns:64px 1fr 1.2fr">
-<span class="no">03</span><span class="nama">Jejaring verifikasi</span><span class="ket">Kanal cepat dengan pemeriksa fakta, Komdigi, dan kampus untuk kasus yang butuh analisis lebih dalam.</span>
+<div class="baris" style="grid-template-columns:64px 1fr 1.2fr" v-click>
+<span class="no">03</span><span class="nama">Jejaring verifikasi</span><span class="ket">Kanal cepat dengan pemeriksa fakta, Komdigi, dan kampus untuk kasus yang perlu analisis lebih dalam.</span>
 </div>
 </div>
 
@@ -540,26 +437,24 @@ Sampaikan sebagai tawaran, bukan jualan.
 -->
 
 ---
-bagian: Penutup
+layout: center
 class: malam
+bagian: Penutup
 ---
 
-# Membuat konten palsu sudah murah.
+<div style="max-width:1020px">
+<h1 style="font-size:64px">Membuat konten palsu sudah murah.</h1>
+<h1 style="font-size:64px;margin-top:12px" class="biru">Yang mahal adalah kebiasaan <span v-mark="{ at: 1, type: 'underline', color: '#0b7a6e', strokeWidth: 4 }">memeriksa sebelum percaya</span>.</h1>
 
-<v-click>
-
-<h1 class="biru" style="margin-top:10px">Yang mahal adalah kebiasaan <span v-mark="{ at: 1, type: 'underline', color: '#0b7a6e', strokeWidth: 4 }">memeriksa sebelum percaya</span>.</h1>
-
-</v-click>
-
-<div class="grid gap-12" style="grid-template-columns: 1fr 1fr; margin-top:70px; align-items:end">
-<div class="kolom">
-<p class="no">KONTAK</p>
-<p>aidil@lecturer.itk.ac.id · 085398952880</p>
+<div class="grid gap-12" style="grid-template-columns: 1fr 1fr; margin-top:60px; align-items:center">
+<div>
+<p class="label-kolom">kontak</p>
+<p style="margin-top:6px">aidil@lecturer.itk.ac.id · 085398952880</p>
 </div>
 <div class="ikuti">
 <img src="/qr-instagram.svg" alt="QR ke Instagram @aidilsaputrakirsan">
 <div><p><b>Konten edukasi AI</b> <span class="mono aksen">@aidilsaputrakirsan</span></p><p class="redup">Instagram · pindai dengan kamera HP</p></div>
+</div>
 </div>
 </div>
 
@@ -573,15 +468,16 @@ bagian: Referensi
 
 # Sumber
 
-<div style="margin-top:28px;font-size:17px">
+<div style="margin-top:28px;font-size:16.5px">
 
 - Nightingale, S. J., &amp; Farid, H. (2022). AI-synthesized faces are indistinguishable from real faces and more trustworthy. *PNAS*, 119(8).
 - iProov (Feb 2025). Studi “deepfake blindspot” — 2.000 responden Inggris &amp; AS (studi vendor).
-- Bisnis.com (7 Feb 2025); detik.com — penangkapan dan analisis forensik video deepfake Presiden oleh Dittipidsiber Bareskrim.
-- Bisnis.com (23 Okt 2025) — Komdigi: kerugian penipuan berbasis AI.
+- Bisnis.com (7 Feb 2025); detik.com — penangkapan dan analisis forensik video deepfake Presiden oleh Dittipidsiber Bareskrim. Bisnis.com (23 Okt 2025) — Komdigi.
+- Europol Innovation Lab (2022, diperbarui 2024). *Facing reality? Law enforcement and the challenge of deepfakes*.
+- INTERPOL (Juni 2024). *Beyond Illusions: Unmasking the Threat of Synthetic Media for Law Enforcement*.
 - Chesney, R., &amp; Citron, D. (2019). Deep Fakes: A Looming Challenge for Privacy, Democracy, and National Security. *California Law Review*, 107.
-- C2PA / Content Credentials (c2pa.org, contentcredentials.org); InVID-WeVerify (weverify.eu); Forensically (29a.ch).
-- UU 11/2008 jo. UU 19/2016 jo. UU 1/2024 tentang ITE; UU 1/2023 tentang KUHP.
+- C2PA / Content Credentials; InVID-WeVerify; Forensically. UU 11/2008 jo. UU 19/2016 jo. UU 1/2024 tentang ITE; UU 1/2023 tentang KUHP.
+- Gambar &amp; video contoh: Wikimedia Commons (domain publik, CC0, CC BY 4.0, CC BY-SA 4.0); kredit di tiap slide.
 
 </div>
 

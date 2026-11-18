@@ -1,11 +1,11 @@
 /*
- * Arah desain: terang bersih (bukan kertas/serif), judul sans tebal dua warna (hitam + biru),
- * aksen teal untuk "asli/terverifikasi", merah bata untuk "rekayasa" — selalu disertai label teks.
- * Latar + kisi piksel samar dilukis global-bottom.vue (.slidev-layout transparan).
+ * Arah desain = konsep SIMFONI, versi terang: judul sans tebal dua warna (hitam + biru), aksen teal,
+ * garis tipis, label mono huruf kecil, diagram yang bercerita per klik (komponen di components/).
+ * Tanpa tabel, badge/pil status, kotak-kotak, atau grid kartu. Merah = rekayasa, teal = asli, kuning = belum pasti.
+ * Latar + jaringan titik dilukis global-bottom.vue (.slidev-layout transparan).
  */
 :root {
   --latar: #f6f7f9;
-  --latar-tegas: #eceff4;
   --permukaan: #ffffff;
   --teks: #10131a;
   --redup: #4a5160;
@@ -13,12 +13,9 @@
   --garis: #e1e4ea;
   --garis-kuat: #cbd0d9;
   --biru: #1f62d6;
-  --aksen: #0b7a6e;      /* asli / terverifikasi / nomor */
-  --aksen-muda: #e3f4f1;
-  --merah: #c0392b;      /* rekayasa / palsu */
-  --merah-muda: #fbe9e7;
-  --kuning: #a86b00;     /* belum pasti */
-  --kuning-muda: #fbf1dc;
+  --aksen: #0b7a6e;
+  --merah: #c0392b;
+  --kuning: #a86b00;
   --sudut: 16px;
 }
 
@@ -30,7 +27,6 @@
   line-height: 1.5;
   padding: 92px 80px 72px;
 }
-
 .slidev-layout h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
@@ -43,11 +39,11 @@
 }
 .slidev-layout h1 + p { opacity: 1; }
 .slidev-layout h2 { font-weight: 700; font-size: 25px; line-height: 1.2; letter-spacing: -0.015em; margin: 0 0 8px; }
-.slidev-layout b, .slidev-layout strong { color: var(--teks); font-weight: 700; }
+.slidev-layout b, .slidev-layout strong { color: inherit; font-weight: 700; }
 .slidev-layout p, .slidev-layout li { color: var(--teks); }
 .slidev-layout ul { list-style: none; padding-left: 0; }
 .slidev-layout ul li { line-height: 1.4; padding-left: 1.2em; position: relative; margin: 0.4em 0; }
-.slidev-layout ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 7px; height: 7px; border-radius: 2px; background: var(--aksen); }
+.slidev-layout ul li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 7px; height: 7px; border-radius: 50%; background: var(--aksen); }
 
 .biru { color: var(--biru) !important; }
 .aksen { color: var(--aksen) !important; }
@@ -56,12 +52,7 @@
 .redup { color: var(--redup) !important; }
 .samar { color: var(--samar) !important; }
 .mono { font-family: 'JetBrains Mono', monospace; font-feature-settings: 'tnum'; }
-
-/* Label status: selalu teks + warna (aman untuk buta warna) */
-.status { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; letter-spacing: 0.03em; line-height: 1; padding: 6px 10px; border-radius: 999px; border: 1px solid currentColor; }
-.status.asli { color: var(--aksen); background: var(--aksen-muda); }
-.status.palsu { color: var(--merah); background: var(--merah-muda); }
-.status.ragu { color: var(--kuning); background: var(--kuning-muda); }
+.label-kolom { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--aksen) !important; margin: 0; }
 
 /* Baris bernomor */
 .baris { display: grid; grid-template-columns: 64px 1fr 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid var(--garis); align-items: center; }
@@ -70,73 +61,40 @@
 .baris .nama { font-weight: 700; font-size: 23px; line-height: 1.2; letter-spacing: -0.015em; }
 .baris .ket { color: var(--redup); font-size: 18px; line-height: 1.4; }
 
-/* Tabel perbandingan */
-.slidev-layout table { width: 100%; border-collapse: collapse; font-size: 17px; }
-.slidev-layout th { text-align: left; font-weight: 500; color: var(--samar); font-size: 13px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; border-bottom: 1px solid var(--garis-kuat); padding: 8px 14px 10px 0; }
-.slidev-layout td { border-bottom: 1px solid var(--garis); padding: 12px 14px 12px 0; vertical-align: top; color: var(--teks); line-height: 1.35; }
-.slidev-layout td:first-child { font-weight: 700; }
-.slidev-layout tr:hover td { background: transparent; }
-
 /* Catatan sumber di dasar slide */
 .slidev-layout .sumber { position: absolute; left: 80px; right: 180px; bottom: 26px; font-size: 13px; color: var(--samar); line-height: 1.4; margin: 0; }
 
 /* Angka sorotan */
-.slidev-layout p.sorot, .slidev-layout .sorot { font-weight: 800; font-size: 116px; line-height: 1; margin: 8px 0 14px; letter-spacing: -0.045em; }
-.slidev-layout p.sorot-kecil, .slidev-layout .sorot-kecil { font-weight: 800; font-size: 52px; line-height: 1.05; margin: 0 0 6px; letter-spacing: -0.03em; }
+.slidev-layout p.sorot-kecil, .slidev-layout .sorot-kecil { font-weight: 800; font-size: 48px; line-height: 1.05; margin: 0 0 4px; letter-spacing: -0.03em; }
+.angka-baris p { margin: 0; }
+.angka-baris p.redup { font-size: 17px; }
 
 /* Sampul */
-.sampul.slidev-layout { padding: 64px 80px 56px; display: flex; flex-direction: column; justify-content: space-between; }
-.sampul h1 { font-size: 66px; max-width: 1000px; }
+.sampul.slidev-layout { padding: 60px 80px 52px; display: flex; flex-direction: column; justify-content: space-between; }
+.sampul h1 { font-size: 64px; max-width: 1000px; }
 .sampul .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; border-top: 1px solid var(--garis-kuat); padding-top: 16px; font-size: 17px; }
 .sampul .meta p { margin: 0; }
 
-/* Slide pernyataan: latar sedikit lebih tegas (dilukis global-bottom) */
+/* Slide pernyataan (latar sedikit lebih tegas dilukis global-bottom) */
 .malam.slidev-layout { background: transparent; }
 
-/* Kolom bergaris atas */
-.kolom { border-top: 2px solid var(--teks); padding-top: 14px; }
-.kolom .no { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 13px; letter-spacing: 0.05em; color: var(--aksen); margin: 0; }
-.kolom h2 { margin: 8px 0 8px; }
-.kolom p { font-size: 18px; }
+/* Pertanyaan pancingan di bawah catatan <Sorot> (isi slot) */
+li.pancing { list-style: none; margin: 18px 0 0; padding: 14px 0 0 0; border-top: 2px solid var(--teks); font-size: 19px; line-height: 1.4; }
 
-/* Alur langkah: kotak bersudut bulat disambung konektor */
-.alur { display: grid; grid-template-columns: repeat(5, 1fr); gap: 26px; }
-.alur > div { padding: 16px 18px; position: relative; border: 1px solid var(--garis-kuat); border-radius: var(--sudut); background: var(--permukaan); }
-.alur > div + div::before { content: ''; position: absolute; left: -27px; top: 50%; width: 26px; height: 2px; background: var(--aksen); }
-.alur > div + div::after { content: ''; position: absolute; left: -9px; top: calc(50% - 4px); border: 5px solid transparent; border-left: 7px solid var(--aksen); }
-.alur .tahap { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--aksen); }
-.alur .judul { font-weight: 700; font-size: 20px; line-height: 1.2; margin: 6px 0; letter-spacing: -0.01em; }
-.alur .ket { font-size: 14.5px; color: var(--redup); line-height: 1.4; }
+/* Slide liar's dividend: dua arah */
+.dua-arah { margin-top: 44px; border-top: 1px solid var(--garis-kuat); }
+.dua-arah > div { display: grid; grid-template-columns: 170px 120px 1fr; align-items: center; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--garis-kuat); font-size: 24px; }
+.panah-teks { position: relative; height: 2px; background: var(--teks); }
+.panah-teks::after { content: ''; position: absolute; right: -2px; top: -5px; border: solid var(--teks); border-width: 0 2px 2px 0; padding: 4px; transform: rotate(-45deg); }
+.panah-teks.merah { background: var(--merah); }
+.panah-teks.merah::after { border-color: var(--merah); }
 
-/* Kotak berbingkai tipis */
-.kotak { border: 1px solid var(--garis-kuat); border-radius: var(--sudut); padding: 22px 24px 24px; background: var(--permukaan); }
-.kotak h2 { margin: 0 0 8px; }
-.kotak p, .kotak li { font-size: 17px; }
-
-/* Gelembung pesan (contoh pesan berantai) */
-.tanya { font-weight: 600; font-size: 23px; line-height: 1.35; border: 1px solid var(--garis-kuat); border-radius: 20px 20px 20px 4px; padding: 16px 22px; margin: 14px 0 18px; background: var(--permukaan); }
-
-/* Spektrum rekayasa: dari "asli tapi menyesatkan" sampai "seluruhnya buatan" */
-.spektrum { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 34px; }
-.spektrum > div { padding: 0 22px 0 0; }
-.spektrum .pita { height: 8px; border-radius: 4px; margin-bottom: 18px; }
-.spektrum .no { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--samar); }
-.spektrum .judul { font-weight: 800; font-size: 23px; line-height: 1.15; margin: 4px 0 8px; letter-spacing: -0.015em; }
-.spektrum .ket { font-size: 16px; color: var(--redup); line-height: 1.4; }
-.spektrum .contoh { font-size: 15px; margin-top: 10px; border-left: 2px solid var(--garis-kuat); padding-left: 10px; color: var(--teks); }
-
-/* Tangga kesimpulan */
-.tangga > div { display: grid; grid-template-columns: 330px 1fr; gap: 20px; align-items: center; padding: 12px 0; border-top: 1px solid var(--garis); }
-.tangga > div:last-child { border-bottom: 1px solid var(--garis); }
-.tangga .status { font-size: 14px; padding: 8px 12px; white-space: nowrap; justify-self: start; }
-.tangga p { margin: 0; font-size: 18px; }
-
-/* Potret pembicara */
-.potret { background: #e7ebf0; border-radius: var(--sudut); overflow: hidden; height: 330px; border: 1px solid var(--garis-kuat); }
+/* Potret pembicara & kontak */
+.potret { background: #e7ebf0; border-radius: var(--sudut); overflow: hidden; height: 330px; }
 .potret img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
 .logo-sebaris { display: inline-block; width: 1.05em; height: 1.05em; border-radius: 0.26em; vertical-align: -0.16em; margin-right: 0.25em; }
-.ikuti { display: flex; align-items: center; gap: 14px; margin-top: 16px; }
-.ikuti img { width: 76px; height: 76px; border-radius: 8px; display: block; flex: none; border: 1px solid var(--garis); }
+.ikuti { display: flex; align-items: center; gap: 14px; }
+.ikuti img { width: 76px; height: 76px; border-radius: 8px; display: block; flex: none; }
 .ikuti p { margin: 0; font-size: 16px; line-height: 1.35; }
 
 /* Pengungkapan bertahap */

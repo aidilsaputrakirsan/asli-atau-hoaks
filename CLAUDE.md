@@ -12,7 +12,7 @@ dan usulan alur ada di `BAHAN-DISKUSI.md`.
 > Membuat konten palsu sudah murah. Yang mahal adalah kebiasaan memeriksa sebelum percaya.
 > Pertanyaannya bukan "AI atau bukan?", tapi "apakah konten ini benar menunjukkan apa yang diklaim?"
 
-Alur: kuis asli/AI → data (manusia ±48%) → kasus deepfake Presiden (Bareskrim 2025) → 4 tingkat rekayasa
+Alur: kuis asli/AI → data (manusia ±48%) → kasus deepfake Presiden (Bareskrim 2025) → 4 tingkat rekayasa → video bodycam palsu (Sora)
 → pertanyaan inti → **tabel perbandingan 4 cara** (mata, asal-usul file, alat deteksi, konteks/OSINT)
 → satu slide per cara → alur 5 langkah → 5 tingkat keyakinan → liar's dividend → hukum & pembuktian
 → praktik (opsional) → rekomendasi → penutup.
@@ -27,22 +27,34 @@ npm run export         # PDF
 Node 22 lewat mise (`.nvmrc`). Slidev v53. Deploy GitHub Pages lewat `.github/workflows/deploy.yml`
 (base otomatis dari nama repo). Repo publik/privat BELUM diputuskan. User commit & push sendiri.
 
-## Tema: TERANG (beda dari SIMFONI yang gelap)
-Token di `:root` `styles/index.css`: latar `#f6f7f9` (+ kisi titik samar dari `global-bottom.vue`),
-teks `#10131a`, redup `#4a5160`, garis `#e1e4ea`, biru `#1f62d6` (bagian kunci judul),
-aksen teal `#0b7a6e` (asli/terverifikasi/nomor), merah `#c0392b` (rekayasa), kuning `#a86b00` (ragu).
-Label `.status.asli|palsu|ragu` selalu berisi TEKS (aman untuk buta warna).
-Plus Jakarta Sans + JetBrains Mono. Aturan gaya sama dengan SIMFONI: judul = kalimat pernyataan dua warna,
-tanpa emoji/gradien/bayangan tebal/label kapital di atas judul, `v-mark` maks 1 per slide (warna `#0b7a6e`),
-hindari grid 3 kartu bernomor, setiap angka luar wajib `.sumber`. Slide `class: malam` = latar sedikit lebih tegas.
+## Desain: konsep SIMFONI, versi TERANG (penting)
+User menolak tampilan "AI template". Ikuti konsep repo simfoni-itk-2026: setiap ide inti = diagram yang
+bercerita per klik (jalur, gerbang, skala, alur), BUKAN tabel, badge/pil status, kotak-kotak, grid kartu,
+atau daftar bullet panjang. Label = mono huruf kecil (`.label-kolom`), bukan kapital. Statement slide =
+`layout: center` + `class: malam`. Latar = jaringan titik bergerak (global-bottom.vue, port SIMFONI).
+Token `:root` styles/index.css: latar `#f6f7f9`, teks `#10131a`, redup `#4a5160`, garis `#e1e4ea`,
+biru `#1f62d6` (bagian kunci judul), teal `#0b7a6e` (asli), merah `#c0392b` (rekayasa), kuning `#a86b00` (belum pasti).
+Judul = kalimat pernyataan dua warna; `v-mark` maks 1/slide (warna `#0b7a6e`); setiap angka luar wajib `.sumber`.
+Komponen klik memakai `useSlideContext().$clicks` + frontmatter `clicks: N`; elemen tambahan pakai `v-click="N"` absolut.
+Mode ekspor (`isPrintMode`) selalu menampilkan keadaan akhir / daftar ringkas.
 
 ## Komponen
-| File | Isi |
-|---|---|
-| `components/Kuis.vue` | 4 gambar A–D, jawaban muncul `:buka="$clicks >= 1"`; gambar kosong → bingkai petunjuk |
-| `components/Tangkapan.vue`, `Foto.vue`, `AngkaNaik.vue` | dari SIMFONI, warna disesuaikan ke tema terang |
-| `global-top.vue` | header "Asli atau rekayasa?" + `bagian`, nomor halaman |
-| `global-bottom.vue` | latar terang + kisi titik (statis) |
+| File | Slide | Isi |
+|---|---|---|
+| `SampulAlur.vue` | 1 | partikel: konten beredar → diperiksa → asli / belum pasti / rekayasa (SMIL) |
+| `Kuis.vue` | 3 | 4 gambar A–D, jawaban = garis warna + label mono |
+| `SkalaTebak.vue` | 4 | skala 0–100% + "lempar koin"; 48% → 59% → iProov 0,1% (`clicks: 3`) |
+| `ModusDeepfake.vue` | 5 | lima langkah modus deepfake Presiden (`clicks: 5`) |
+| `SpektrumRekayasa.vue` | 6 | empat tingkat rekayasa + kurung detektor vs konteks (`clicks: 5`) |
+| `Sorot.vue` | 7, 10 | gambar/video + penanda bernomor + catatan; slot untuk `<li v-click class="pancing">` |
+| `EmpatLensa.vue` | 9 | peta 4 cara (cepat↔keahlian × lemah↔kuat) + panel fokus (`clicks: 5`) |
+| `PerjalananFile.vue` | 11 | jejak file: kamera → WA → screenshot, chip dicoret (`clicks: 3`) |
+| `SkorDetektor.vue` | 12 | satu gambar, tiga skor detektor (ilustrasi) (`clicks: 2`) |
+| `JejakUnggahan.vue` | 13 | garis waktu cari balik → sumber pertama → geo/kronolokasi (ilustrasi) (`clicks: 4`) |
+| `AlurVerifikasi.vue` | 14 | lima gerbang verifikasi + cabang ke ahli (`clicks: 6`) |
+| `SkalaKeyakinan.vue` | 15 | skala 5 tingkat + jarum, kasus bodycam (`clicks: 3`) |
+| `RantaiBukti.vue` | 17 | rantai pengamanan bukti + hash SHA-256 nyata (`clicks: 3`) |
+| `Tangkapan.vue`, `Foto.vue`, `AngkaNaik.vue` | – | dari SIMFONI |
 
 ## Data & sumber (jangan mengarang angka baru)
 | Angka | Sumber | Catatan |
@@ -56,9 +68,13 @@ hindari grid 3 kartu bernomor, setiap angka luar wajib `.sumber`. Slide `class: 
 
 ## Belum selesai (TODO)
 - Semua info acara (lihat `BAHAN-DISKUSI.md`).
-- `public/kuis/a–d.jpg` (2 asli bebas lisensi + 2 buatan AI sendiri), `public/praktik/kasus-1..3.jpg`.
+- `public/praktik/kasus-1..3.jpg` (kuis & contoh sudah terisi dari Commons — daftar lisensi di `RUJUKAN.md`).
 - Rekaman demo (Google Lens, InVID-WeVerify, EXIF, WA biasa vs dokumen).
 - Lembar verifikasi + Google Form.
+
+## Aset
+Semua gambar/video contoh dari Wikimedia Commons; lisensi, kredit, dan kandidat lain di `RUJUKAN.md`.
+Video `.webm` (Commons); poster `.jpg` diambil dengan Playwright (tidak ada ffmpeg). Kredit CC BY/BY-SA wajib di `.sumber`.
 
 ## Privasi
 Jangan pakai wajah tokoh nyata/anggota Polri untuk contoh buatan AI, jangan memuat data korban/kasus
