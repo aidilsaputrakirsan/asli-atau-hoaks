@@ -4,3 +4,6 @@ dist
 .DS_Store
 # rekaman mentah bisa memuat data asli; hanya mp4 hasil potong yang di-commit
 *.mov
+
+# suara mentah (klon ElevenLabs + rekaman asli) — sampel suara pribadi, jangan di-commit
+bahan-mentah/

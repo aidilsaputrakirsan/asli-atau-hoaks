@@ -26,6 +26,19 @@ Baca PDF-nya sebelum mengutip angka atau rekomendasi spesifik.
 | `public/contoh/bodycam-sora.webm` (+ `.jpg` poster) | Video bodycam polisi buatan Sora, 10 dtk | Domain publik; pengunggah = orang di video, setuju dipublikasi — Commons "Example of Sora AI-Generated Police Body Camera Footage.webm" | 7 |
 | `public/contoh/kerangka-raksasa.jpg` | "Penggalian kerangka raksasa" (AI) | Midjourney, domain publik — Commons "Fake excavation of a giant skeleton, MidJourney AI.png" | 10 |
 
+### Latihan antar-Polres (`public/latihan/`, slide 17–22)
+
+| File | Isi | Jawaban | Lisensi & kredit (Commons) |
+|---|---|---|---|
+| `banjir-2009.jpg` | Banjir Lembuswana, Samarinda, 23 Apr 2009 (cap tanggal tercetak, EXIF Samsung S630 masih ada) | asli, klaim salah | Bloesafir Pamanjagau, CC BY 3.0 — "Banjir lembuswana - panoramio.jpg" |
+| `wajah-ai.jpg` | Perempuan di swalayan, Stable Diffusion (orang tidak pernah ada) | AI | Benlisquare, domain publik — "This AI-generated woman does not exist.png" (dikonversi ke JPG) |
+| `samarinda-asli.webm` (+ `.jpg` poster) | Video HP vertikal, permukiman Samarinda Utara, Mei 2026, 7 dtk | asli | Sri Wahyuni Nur Indah Sari, CC BY-SA 3.0, orang di video setuju — "Warunadwipa Timeline – Documentation at North Samarinda.webm". Plat motor sekilas terlihat di awal video. |
+| `hollywood-ai.jpg` | Papan Hollywood "terbakar", hoaks viral kebakaran LA Jan 2025 | AI | tidak diketahui, domain publik — "AI-generated deepfake hoax image of the Hollywood sign during the 2025 California wildfires.jpg" |
+| `borneo-sora.webm` (+ `.jpg` poster) | Rangkong di tepi sungai, Sora, 8,5 dtk (versi 720p) | AI | Sora/OpenAI, domain publik — "Borneo wildlife on the Kinabatangan River.webm" |
+| `banjir-2026.jpg` | Banjir Samarinda depan Pegadaian, 22 Mei 2026 17.08 | asli | Bernadetta Alice Caroline, CC BY-SA 4.0 — "Banjir Samarinda (4).jpg" |
+
+Klaim di setiap ronde = rekaan untuk latihan (tertulis di `.sumber`). Poster video diambil dengan Playwright.
+
 ## Kandidat aset lain (belum diunduh)
 
 | File di Wikimedia Commons | Lisensi | Kegunaan |
@@ -35,6 +48,9 @@ Baca PDF-nya sebelum mengutip angka atau rekomendasi spesifik.
 | Abraham Lincoln using a smartphone (anachronism).jpg | Domain publik | Contoh anakronisme yang mudah dikenali |
 | X-Y plot of algorithmically-generated photorealistic portraits by nationality.png | CC BY-SA 4.0, Benlisquare | Wajah orang yang tidak pernah ada |
 | AI generated image of Venice under a bombing.png | Domain publik | Gambar perang palsu (tampak seperti lukisan) |
+| AI generated hand.png | Domain publik | Tangan 6 jari (tanda klasik, untuk slide Mata) |
+| Banjir Samarinda (1)–(9).jpg | CC BY-SA 4.0 | Foto banjir Samarinda 2026 lain, cadangan ronde |
+| Kebakaran Hutan dan Lahan.jpg (Ketapang, Kalbar, 2026) | CC0 | Bahan ronde "lokasi dipelintir" (diklaim di Kaltim) |
 
 ## Yang sebaiknya dibuat sendiri
 - Contoh **tingkat 01 (konteks dipelintir)**: satu foto asli bebas lisensi + tangkapan layar pesan WA tiruan dengan klaim waktu/tempat yang salah.

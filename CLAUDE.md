@@ -4,8 +4,8 @@ Presentasi Aidil Saputra Kirsan. Audiens: kepolisian. Fokus: cara membedakan fot
 hoaks/rekayasa (termasuk deepfake) dan **perbandingan cara memeriksa**.
 Jawab dalam Bahasa Indonesia, santai tapi jelas.
 
-**Status: DRAF untuk diskusi dengan panitia.** Acara, tanggal, durasi, profil peserta, dan format belum
-ada. Placeholder `[Nama acara] · [Satuan/Polda] · [Tanggal]` di sampul. Pertanyaan untuk panitia
+**Status: DRAF untuk diskusi dengan panitia.** Peserta: perwakilan Polres se-Kaltim, maks. 150 orang
+(latihan dimainkan per tim Polres). Acara, tanggal, durasi, dan format belum ada. Placeholder `[Nama acara] · [Satuan/Polda] · [Tanggal]` di sampul. Pertanyaan untuk panitia
 dan usulan alur ada di `BAHAN-DISKUSI.md`.
 
 ## Benang merah
@@ -14,7 +14,8 @@ dan usulan alur ada di `BAHAN-DISKUSI.md`.
 
 Alur: kuis asli/AI → data (manusia ±48%) → kasus deepfake Presiden (Bareskrim 2025) → 4 tingkat rekayasa → video bodycam palsu (Sora)
 → pertanyaan inti → **tabel perbandingan 4 cara** (mata, asal-usul file, alat deteksi, konteks/OSINT)
-→ satu slide per cara → alur 5 langkah → 5 tingkat keyakinan → liar's dividend → hukum & pembuktian
+→ satu slide per cara → alur 5 langkah → 5 tingkat keyakinan → **latihan antar-Polres 7 ronde** (kartu
+hijau/kuning/merah; ronde 7 = suara asli vs klon ElevenLabs suara Aidil sendiri) → liar's dividend → hukum & pembuktian
 → praktik (opsional) → rekomendasi → penutup.
 
 ## Jalankan
@@ -53,7 +54,9 @@ Mode ekspor (`isPrintMode`) selalu menampilkan keadaan akhir / daftar ringkas.
 | `JejakUnggahan.vue` | 13 | garis waktu cari balik → sumber pertama → geo/kronolokasi (ilustrasi) (`clicks: 4`) |
 | `AlurVerifikasi.vue` | 14 | lima gerbang verifikasi + cabang ke ahli (`clicks: 6`) |
 | `SkalaKeyakinan.vue` | 15 | skala 5 tingkat + jarum, kasus bodycam (`clicks: 3`) |
-| `RantaiBukti.vue` | 17 | rantai pengamanan bukti + hash SHA-256 nyata (`clicks: 3`) |
+| `Ronde.vue` | 17–22 | ronde latihan: klaim + media (foto/video) + 3 jawaban (asli / asli-klaim salah / AI) + petunjuk bernomor + cara cek tercepat (`clicks: titik + 2`) |
+| `RondeSuara.vue` | 23 | ronde suara: klip A–C + tombol putar + gelombang dari file audio; jawaban asli/kloning (`clicks: titik + 2`). Naskah: `NASKAH-SUARA.md` |
+| `RantaiBukti.vue` | 26 | rantai pengamanan bukti + hash SHA-256 nyata (`clicks: 3`) |
 | `Tangkapan.vue`, `Foto.vue`, `AngkaNaik.vue` | – | dari SIMFONI |
 
 ## Data & sumber (jangan mengarang angka baru)
@@ -69,13 +72,14 @@ Mode ekspor (`isPrintMode`) selalu menampilkan keadaan akhir / daftar ringkas.
 ## Belum selesai (TODO)
 - Semua info acara (lihat `BAHAN-DISKUSI.md`).
 - `public/praktik/kasus-1..3.jpg` (kuis & contoh sudah terisi dari Commons — daftar lisensi di `RUJUKAN.md`).
+- `public/latihan/suara-a/b/c.m4a` SUDAH ADA (A, C = klon ElevenLabs; B = rekaman asli, sudah dibersihkan & disamakan volumenya; mentah di `bahan-mentah/`, di-gitignore) — naskah di `NASKAH-SUARA.md`.
 - Rekaman demo (Google Lens, InVID-WeVerify, EXIF, WA biasa vs dokumen).
 - Lembar verifikasi + Google Form.
 
 ## Aset
-Semua gambar/video contoh dari Wikimedia Commons; lisensi, kredit, dan kandidat lain di `RUJUKAN.md`.
+Semua gambar/video contoh dari Wikimedia Commons (`public/kuis`, `public/contoh`, `public/latihan`); lisensi, kredit, dan kandidat lain di `RUJUKAN.md`.
 Video `.webm` (Commons); poster `.jpg` diambil dengan Playwright (tidak ada ffmpeg). Kredit CC BY/BY-SA wajib di `.sumber`.
 
 ## Privasi
-Jangan pakai wajah tokoh nyata/anggota Polri untuk contoh buatan AI, jangan memuat data korban/kasus
+Jangan pakai wajah ATAU SUARA tokoh nyata/anggota Polri untuk contoh buatan AI (klon suara hanya suara Aidil sendiri), jangan memuat data korban/kasus
 yang belum dirilis resmi. Kalau repo publik: anggap semua isi bisa dibaca siapa saja.

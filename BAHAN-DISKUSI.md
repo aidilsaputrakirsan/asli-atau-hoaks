@@ -6,7 +6,7 @@ Draf awal. Semua di bawah ini usulan dan bisa diubah setelah bertemu panitia.
 - **Asli atau Rekayasa? Memverifikasi Foto dan Video di Era AI** (dipakai di draf)
 - Alternatif: "Melawan Hoaks Visual: Cara Polisi Memeriksa Foto dan Video di Era Deepfake"
 
-## Usulan alur (±45 menit paparan + 15 menit praktik)
+## Usulan alur (±60 menit dengan latihan antar-Polres, +15 menit bila ada praktik HP)
 | Bagian | Slide | Menit |
 |---|---|---|
 | Pembuka + kuis "asli atau AI?" | 1–4 | 8 |
@@ -14,16 +14,20 @@ Draf awal. Semua di bawah ini usulan dan bisa diubah setelah bertemu panitia.
 | Pertanyaan inti + **perbandingan 4 cara memeriksa** | 8–9 | 5 |
 | Mata · Asal-usul file · Alat deteksi · Konteks (OSINT) | 10–13 | 13 |
 | Alur 5 langkah + 5 tingkat keyakinan | 14–15 | 6 |
-| Liar's dividend + hukum & pembuktian | 16–17 | 5 |
-| Praktik kelompok (opsional) | 18 | 15 |
-| Rekomendasi + penutup | 19–20 | 3 |
+| **Latihan antar-Polres: 7 ronde tebak foto/video/suara** (kartu warna) | 16–24 | 18 |
+| Liar's dividend + hukum & pembuktian | 25–26 | 5 |
+| Praktik kelompok dengan HP (opsional) | 27 | 15 |
+| Rekomendasi + penutup | 28–29 | 3 |
 
-Kalau waktunya hanya 30 menit: lewati slide 10 (mata), 18 (praktik), dan ringkas slide 17.
+Kalau waktunya hanya 30 menit: lewati slide 10 (mata) dan 27 (praktik HP), pakai ronde 1, 2, 4, 7 saja, dan ringkas slide 26.
 
 ## Yang perlu ditanyakan ke panitia
 1. **Nama acara, tanggal, tempat, durasi**, dan apakah ada sesi tanya jawab/praktik.
-2. **Siapa pesertanya?** Penyidik siber (Ditressiber) yang teknis, humas, Bhabinkamtibmas, atau campuran?
-   Ini menentukan seberapa teknis bagian alat deteksi dan hukum.
+2. ~~Siapa pesertanya?~~ **Sudah: perwakilan Polres se-Kaltim, maks. 150 orang.** Yang masih perlu ditanyakan:
+   berapa orang per Polres, dan fungsi apa saja (Reskrim, Siber, Humas, Bhabinkamtibmas)? Ini menentukan
+   seberapa teknis bagian alat deteksi dan hukum.
+   - Pastikan ruangan punya **speaker yang tersambung ke laptop** (untuk ronde suara).
+   - Minta panitia menyiapkan **3 kartu warna (hijau/kuning/merah) per tim Polres** + pencatat skor untuk latihan antar-Polres.
 3. **Luaran yang diharapkan:** wawasan umum, keterampilan praktis, atau draf SOP verifikasi?
 4. **Boleh memakai contoh kasus nyata?** Kasus yang sudah dirilis resmi (mis. deepfake Presiden 2025), atau
    kasus lokal Kaltim yang boleh dibahas di forum ini.
