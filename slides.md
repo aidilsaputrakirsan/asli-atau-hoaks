@@ -195,7 +195,7 @@ bagian: Pertanyaan inti
 ---
 
 <div style="max-width:1020px">
-<h1 style="font-size:60px">Pertanyaannya bukan “AI atau bukan?”</h1>
+<h1 style="font-size:60px"><TeksTerurai teks="Pertanyaannya bukan “AI atau bukan?”" /></h1>
 <h1 style="font-size:60px;margin-top:14px" class="biru">Tetapi: apakah konten ini <span v-mark="{ at: 1, type: 'underline', color: '#0b7a6e', strokeWidth: 4 }">benar menunjukkan</span> apa yang diklaim?</h1>
 <p v-click="2" class="mono redup" style="font-size:18px;margin-top:40px">siapa yang pertama mengunggah · kapan diambil · di mana · adakah tanda diubah</p>
 </div>

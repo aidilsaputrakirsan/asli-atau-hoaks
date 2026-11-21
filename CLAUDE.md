@@ -57,6 +57,7 @@ Mode ekspor (`isPrintMode`) selalu menampilkan keadaan akhir / daftar ringkas.
 | `Ronde.vue` | 17–22 | ronde latihan: klaim + media (foto/video) + 3 jawaban (asli / asli-klaim salah / AI) + petunjuk bernomor + cara cek tercepat (`clicks: titik + 2`) |
 | `RondeSuara.vue` | 23 | ronde suara: klip A–C + tombol putar + gelombang dari file audio; jawaban asli/kloning (`clicks: titik + 2`). Naskah: `NASKAH-SUARA.md` |
 | `RantaiBukti.vue` | 26 | rantai pengamanan bukti + hash SHA-256 nyata (`clicks: 3`) |
+| `TeksTerurai.vue` | 8 | teks acak → terurai jadi kalimat asli; adaptasi `DecryptedText` Vue Bits tanpa motion-v (`at` = klik pemicu, ekspor = utuh). Vue Bits dipakai hemat: 1–2 slide statement saja |
 | `Tangkapan.vue`, `Foto.vue`, `AngkaNaik.vue` | – | dari SIMFONI |
 
 ## Data & sumber (jangan mengarang angka baru)
